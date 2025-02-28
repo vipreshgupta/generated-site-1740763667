@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Games Hub with ChatGPT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        nav {
+            background-color: #2a9df4;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        #logo {
+            max-width: 100px;
+            vertical-align: middle;
+            margin-right: 20px;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        #featured-games {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .game-thumbnail {
+            text-align: center;
+            margin: 10px;
+        }
+        .game-thumbnail img {
+            max-width: 200px;
+            height: auto;
+            border: 3px solid #2a9df4;
+            border-radius: 10px;
+        }
+        .game-thumbnail p {
+            margin-top: 5px;
+            color: #2a9df4;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #2a9df4;
+            text-align: center;
+        }
+        #chatgpt {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        #chat-icon {
+            background-color: #2a9df4;
+            color: #fff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        #chat-window {
+            display: none;
+            background-color: #fff;
+            border: 1px solid #2a9df4;
+            border-radius: 10px;
+            width: 300px;
+            height: 400px;
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+        footer a {
+            color: #2a9df4;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+            #chatgpt {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            #chat-window {
+                width: 90%;
+                height: 300px;
+                bottom: 60px;
+                left: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="https://picsum.photos/id/1025/100/50" alt="Website Logo" id="logo">
+        <ul>
+            <li><a href="#minesweeper">Minesweeper</a></li>
+            <li><a href="#tic-tac-toe">Tic Tac Toe</a></li>
+            <li><a href="#chatgpt">ChatGPT</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="featured-games">
+            <h2>Featured Games</h2>
+            <div class="game-thumbnail">
+                <img src="https://picsum.photos/200/300" alt="Minesweeper Thumbnail">
+                <p>Minesweeper</p>
+            </div>
+            <div class="game-thumbnail">
+                <img src="https://picsum.photos/200/301" alt="Tic Tac Toe Thumbnail">
+                <p>Tic Tac Toe</p>
+            </div>
+        </section>
+
+        <section id="minesweeper">
+            <h2>Minesweeper</h2>
+        </section>
+
+        <section id="tic-tac-toe">
+            <h2>Tic Tac Toe</h2>
+        </section>
+    </main>
+
+    <aside id="chatgpt">
+        <div id="chat-icon">💬</div>
+        <div id="chat-window">
+        </div>
+    </aside>
+
+    <footer>
+        <p>&copy; 2024 Mini-Games Hub. <a href="/terms">Terms of Service</a> | <a href="/privacy">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('chat-icon').addEventListener('click', function() {
+            var chatWindow = document.getElementById('chat-window');
+            chatWindow.style.display = chatWindow.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+</body>
+</html>
